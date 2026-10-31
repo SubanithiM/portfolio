@@ -1,223 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- SEO: edit the title and description if your role changes -->
-<title>Subanithi M | Software Developer – Java Full Stack Portfolio</title>
-<meta name="description" content="Portfolio of Subanithi M, an Electronics and Communication Engineering student and Java full stack developer skilled in Java, Spring Boot, JSP, Servlets, MySQL and Docker.">
-<meta name="theme-color" content="#f7fafb">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subanithi M | Java Full Stack Developer Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Subanithi M, an Electronics and Communication Engineering student and Java full stack developer skilled in Spring Boot, JSP, Servlets, MySQL and Python.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-<!-- ===== NAVIGATION ===== -->
-<header>
-  <nav class="wrap" aria-label="Main navigation">
-    <a href="#home" class="logo">Subanithi M</a>
-    <button id="burger" class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i class="fa-solid fa-bars"></i></button>
-    <ul id="menu" class="menu">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- Smoke cursor trail is drawn on this canvas (see script.js) -->
+  <canvas id="smoke" aria-hidden="true"></canvas>
 
-<main id="main">
+  <!-- ===== NAVIGATION ===== -->
+  <header class="nav" id="nav">
+    <a href="#home" class="logo" aria-label="Subanithi M, back to top">Subanithi M</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="links"><i
+        class="fa-solid fa-bars"></i></button>
+    <nav aria-label="Main navigation">
+      <ul id="links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certificate</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<!-- ===== HERO ===== -->
-<section id="home" class="hero">
-  <div class="wrap">
-    <div>
+  <main id="main">
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+      <p class="hello">Hi, I am</p>
       <h1>Subanithi M</h1>
       <p class="role">Software Developer · Java Full Stack</p>
-      <p class="intro">Electronics and Communication Engineering student who builds Java web applications end to end: MySQL schemas, REST APIs and deployed Docker apps.</p>
-      <div class="btns">
+      <p class="lead">I build web applications with Java, Spring Boot, JSP, Servlets and MySQL. I am an Electronics and
+        Communication Engineering student with internship experience, and I enjoy solving problems with clear logic.</p>
+      <div class="actions">
         <a class="btn primary" href="#projects">View My Work</a>
-        <a class="btn" href="#contact">Contact Me</a>
+        <a class="btn ghost" href="#contact">Contact Me</a>
       </div>
-      <div class="socials">
-        <a href="https://github.com/SubanithiM" target="_blank" rel="noopener" aria-label="GitHub profile" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/subanithi46" target="_blank" rel="noopener" aria-label="LinkedIn profile" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <!-- Replace each href="#" with your real URL and remove the "placeholder" class -->
+      <div class="social">
+        <a href="#" class="placeholder" title="[Add GitHub URL]" aria-label="GitHub (add your URL)"><i
+            class="fa-brands fa-github"></i></a>
+        <a href="#" class="placeholder" title="[Add LinkedIn URL]" aria-label="LinkedIn (add your URL)"><i
+            class="fa-brands fa-linkedin-in"></i></a>
         <a href="mailto:subanithi46@gmail.com" aria-label="Email Subanithi"><i class="fa-solid fa-envelope"></i></a>
       </div>
-    </div>
-    <!-- Profile photo: save your image as profile.jpg next to index.html. Initials show until then. -->
-    <div class="avatar"><div><img src="profile.jpg" alt="Portrait of Subanithi M" onerror="this.remove()"><span>SM</span></div></div>
-  </div>
-  <div class="hero-foot wrap"><p>Perambalur, Tamil Nadu</p><p>github.com/SubanithiM</p></div>
-</section>
+    </section>
 
-<!-- ===== ABOUT ===== -->
-<section id="about">
-  <div class="wrap">
-    <h2>About me</h2>
-    <p class="lead">Problem-solver with a logical mindset and a foundation in Java, HTML and CSS.</p>
-    <div class="about">
-      <p>I am a motivated Electronics and Communication Engineering student with hands-on experience from internships and technical training in software development and embedded systems. I enjoy turning ideas into working applications and want to contribute to innovative projects and organizational growth in the IT and engineering domains.</p>
-      <div class="card facts">
-        <dl>
-          <div><dt>Location</dt><dd>Perambalur, Tamil Nadu</dd></div>
-          <div><dt>Degree</dt><dd>B.E. Electronics and Communication</dd></div>
-          <div><dt>Main stack</dt><dd>Java, Spring Boot, MySQL</dd></div>
-        </dl>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== EDUCATION ===== -->
-<section id="education">
-  <div class="wrap">
-    <h2>Education</h2>
-    <div class="grid">
-      <article class="card">
-        <h3>B.E. – Electronics and Communication Engineering</h3>
-        <p>Government College of Engineering, Srirangam</p>
-        <p class="meta">2022 – 2026 · CGPA: 72.5%</p>
-      </article>
-      <article class="card">
-        <h3>Higher Secondary Education</h3>
-        <p>Sree Ambaals Matric Hr.Sec. School, Padalur</p>
-        <p class="meta">2019 – 2022 · SLC: 80% · SC: 69.3%</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SKILLS (only skills listed in the resume) ===== -->
-<section id="skills">
-  <div class="wrap">
-    <h2>Technical skills</h2>
-    <div class="grid skills">
-      <article class="card"><h3><i class="fa-solid fa-code"></i>Programming Languages</h3><ul class="tags"><li>Java</li><li>SQL</li></ul></article>
-      <article class="card"><h3><i class="fa-solid fa-laptop-code"></i>Frontend</h3><ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React</li></ul></article>
-      <article class="card"><h3><i class="fa-solid fa-server"></i>Backend</h3><ul class="tags"><li>Java Servlets</li><li>JSP</li><li>JDBC</li><li>Spring Boot</li></ul></article>
-      <article class="card"><h3><i class="fa-solid fa-database"></i>Database</h3><ul class="tags"><li>MySQL</li></ul></article>
-      <article class="card"><h3><i class="fa-solid fa-puzzle-piece"></i>Core Concepts</h3><ul class="tags"><li>OOP</li><li>Exception Handling</li><li>Multithreading</li><li>Collections</li><li>Data Structures and Algorithms</li></ul></article>
-      <article class="card"><h3><i class="fa-solid fa-screwdriver-wrench"></i>Tools and Deployment</h3><ul class="tags"><li>Git</li><li>GitHub</li><li>Maven</li><li>Apache Tomcat</li><li>Docker</li><li>Render</li><li>Aiven Cloud MySQL</li><li>Eclipse</li><li>VS Code</li><li>Antigravity</li></ul></article>
-      <article class="card"><h3><i class="fa-solid fa-layer-group"></i>Other Technologies</h3><ul class="tags"><li>Python</li><li>Scapy</li><li>REST APIs</li></ul></article>
-    </div>
-  </div>
-</section>
-
-<!-- ===== EXPERIENCE ===== -->
-<section id="experience">
-  <div class="wrap">
-    <h2>Experience and internship</h2>
-    <div class="timeline">
-      <article class="card">
-        <h3>Java Full Stack Developer Intern</h3>
-        <p>THE MIND IT, Trichy</p>
-        <p class="meta">Jun 2025 – Aug 2025</p>
-        <ul class="list">
-          <li>Built and deployed web applications using Java, Spring Boot, HTML, CSS and JavaScript.</li>
-          <li>Designed relational database schemas in MySQL, improving query performance for data-heavy modules.</li>
-          <li>Implemented RESTful API endpoints with Spring Boot, integrating front end and back end.</li>
-          <li>Collaborated with a team of developers to deliver feature updates on schedule.</li>
-        </ul>
-        <ul class="tags"><li>Java</li><li>Spring Boot</li><li>MySQL</li><li>REST APIs</li><li>JavaScript</li></ul>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PROJECTS ===== -->
-<section id="projects">
-  <div class="wrap">
-    <h2>Featured projects</h2>
-    <div class="grid projects">
-      <article class="card">
-        <h3>Zoloto – E-commerce Web Application</h3>
-        <p class="meta">Jul 2026 – Oct 2026</p>
-        <p>A full-stack e-commerce application built with Java, JSP, Servlets, JDBC and MySQL, deployed with Docker on Render.</p>
-        <ul class="list">
-          <li>Database operations with the DAO pattern and CRUD functionality.</li>
-          <li>User authentication, product browsing, shopping cart, wishlist, address management and order workflows.</li>
-          <li>Cloud database connectivity; source managed with Git and GitHub.</li>
-        </ul>
-        <ul class="tags"><li>Java</li><li>JSP</li><li>Servlets</li><li>JDBC</li><li>MySQL</li><li>Docker</li><li>Render</li></ul>
-        <div class="btns">
-          <a class="btn primary" href="https://zoloto-u5t9.onrender.com" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live Demo</a>
-          <a class="btn" href="https://github.com/SubanithiM/Zoloto" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>GitHub</a>
+    <!-- ===== ABOUT ===== -->
+    <section id="about">
+      <h2 class="reveal">About me</h2>
+      <div class="about reveal">
+        <!-- Profile photo: replace profile.jpg in this folder to change it -->
+        <img src="profile.jpg" alt="Subanithi M wearing headphones and a black blazer, seated at a laptop" width="1200"
+          height="675" loading="lazy">
+        <div>
+          <p>I am a motivated Electronics and Communication Engineering student with a strong foundation in Java, HTML
+            and CSS. I have gained hands-on experience through an internship and technical training in software
+            development and embedded systems.</p>
+          <p>I am good at problem-solving and logical thinking, and I want to contribute to innovative projects and grow
+            with an organization in the IT and engineering domains.</p>
+          <ul class="facts">
+            <li><i class="fa-solid fa-location-dot"></i> Perambalur, Tamil Nadu</li>
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:subanithi46@gmail.com">subanithi46@gmail.com</a>
+            </li>
+            <li><i class="fa-solid fa-phone"></i> <a href="tel:+918098238827">8098238827</a></li>
+          </ul>
         </div>
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education">
+      <h2 class="reveal">Education</h2>
+      <div class="timeline">
+        <article class="item reveal">
+          <h3>B.E, Electronics and Communication Engineering</h3>
+          <p class="meta">Government College of Engineering, Srirangam | 2022 to 2026</p>
+          <p>CGPA: 72.5%</p>
+        </article>
+        <article class="item reveal">
+          <h3>Higher secondary education</h3>
+          <p class="meta">Sree Ambaals Matric Hr.Sec. School, Padalur | 2019 to 2022</p>
+          <p>SLC: 80% | SC: 69.3%</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS (only skills listed in the resume) ===== -->
+    <section id="skills">
+      <h2 class="reveal">Technical skills</h2>
+      <div class="grid skills">
+        <div class="card reveal">
+          <h3><i class="fa-solid fa-code"></i> Programming languages</h3>
+          <ul class="tags">
+            <li>Java</li>
+            <li>SQL</li>
+            <li>Python</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3><i class="fa-brands fa-html5"></i> Frontend</h3>
+          <ul class="tags">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>React</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3><i class="fa-solid fa-server"></i> Backend</h3>
+          <ul class="tags">
+            <li>Java Servlets</li>
+            <li>JSP</li>
+            <li>JDBC</li>
+            <li>Spring Boot</li>
+            <li>REST APIs</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3><i class="fa-solid fa-database"></i> Databases</h3>
+          <ul class="tags">
+            <li>MySQL</li>
+            <li>Aiven Cloud MySQL</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3><i class="fa-solid fa-cubes"></i> Frameworks and libraries</h3>
+          <ul class="tags">
+            <li>Spring</li>
+            <li>Spring Boot</li>
+            <li>Hibernate</li>
+            <li>React</li>
+            <li>Scapy</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools and platforms</h3>
+          <ul class="tags">
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>Maven</li>
+            <li>Apache Tomcat</li>
+            <li>Docker</li>
+            <li>Render</li>
+            <li>Eclipse</li>
+            <li>VS Code</li>
+            <li>Antigravity</li>
+          </ul>
+        </div>
+        <div class="card reveal wide">
+          <h3><i class="fa-solid fa-brain"></i> Core concepts</h3>
+          <ul class="tags">
+            <li>OOP</li>
+            <li>Exception Handling</li>
+            <li>Multithreading</li>
+            <li>Collections</li>
+            <li>Data Structures and Algorithms</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience">
+      <h2 class="reveal">Experience and internship</h2>
+      <div class="timeline">
+        <article class="item reveal">
+          <h3>Java Full Stack Developer Intern</h3>
+          <p class="meta">THE MIND IT, Trichy | Jun 2025 to Aug 2025</p>
+          <ul class="points">
+            <li>Built and deployed web applications using Java, Spring Boot, HTML, CSS and JavaScript.</li>
+            <li>Designed relational database schemas in MySQL, improving query performance for data-heavy modules.</li>
+            <li>Implemented RESTful API endpoints with Spring Boot, connecting the front end and back end.</li>
+            <li>Worked with a team of developers to deliver feature updates on schedule.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects">
+      <h2 class="reveal">Featured projects</h2>
+      <div class="grid projects">
+        <article class="card project reveal">
+          <h3>Zoloto: e-commerce web application</h3>
+          <p class="meta">Jul 2026 to Oct 2026</p>
+          <p>A full-stack e-commerce application built with Java, JSP, Servlets, JDBC and MySQL, deployed live with
+            Docker and Render.</p>
+          <ul class="points">
+            <li>User authentication, product browsing, shopping cart and wishlist.</li>
+            <li>Address management and complete order workflows.</li>
+            <li>Database operations with the DAO pattern and CRUD functionality.</li>
+            <li>Cloud database connection; source managed with Git and GitHub.</li>
+          </ul>
+          <ul class="tags">
+            <li>Java</li>
+            <li>JSP</li>
+            <li>Servlets</li>
+            <li>JDBC</li>
+            <li>MySQL</li>
+            <li>Docker</li>
+            <li>Render</li>
+          </ul>
+          <div class="links">
+            <a class="btn primary small" href="https://zoloto-u5t9.onrender.com" target="_blank"
+              rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>
+            <a class="btn ghost small placeholder" href="#" title="https://github.com/SubanithiM"><i
+                class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </article>
+
+        <article class="card project reveal">
+          <h3>ARP spoofing detection system with email alert</h3>
+          <p class="meta">Python and Scapy</p>
+          <p>A real-time tool that monitors ARP packets and checks IP and MAC address mappings to protect a local
+            network.</p>
+          <ul class="points">
+            <li>Detects suspicious MAC address changes linked to ARP spoofing through continuous packet monitoring.</li>
+            <li>Sends alerts in the terminal and by email as soon as an attack is detected.</li>
+            <li>A lightweight, low-cost option for LAN security.</li>
+          </ul>
+          <ul class="tags">
+            <li>Python</li>
+            <li>Scapy</li>
+            <li>Networking</li>
+          </ul>
+          <div class="links">
+            <a class="btn ghost small placeholder" href="#" title="[Add GitHub URL]"><i class="fa-brands fa-github"></i>
+              GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATIONS ===== -->
+    <section id="certifications">
+      <h2 class="reveal">Certificate</h2>
+      <article class="card reveal">
+        <h3><i class="fa-solid fa-certificate"></i> Full Stack Web Development, TAP Academy</h3>
+        <p class="meta">2024</p>
+        <p>Covered Core Java, Advanced Java (JDBC, J2EE, Servlets), Spring, Hibernate, MySQL and frontend development,
+          including OOP, Collections, Multithreading, Exception Handling and Java 8 features (Lambda Expressions, Stream
+          API). Applied these skills in several projects, including a capstone online food delivery application from
+          database integration to responsive UI.</p>
       </article>
-      <article class="card">
-        <h3>ARP Spoofing Detection System with Email Alert</h3>
-        <p class="meta">Python and Scapy</p>
-        <p>A real-time detection system that monitors ARP packets and verifies IP–MAC address mappings to protect a local network.</p>
-        <ul class="list">
-          <li>Detects suspicious MAC address changes linked to ARP spoofing through continuous packet monitoring.</li>
-          <li>Raises real-time alerts in the terminal and by email.</li>
-          <li>A lightweight, cost-effective solution for LAN security.</li>
-        </ul>
-        <ul class="tags"><li>Python</li><li>Scapy</li><li>Email Alerts</li><li>LAN Security</li></ul>
-      </article>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ===== CERTIFICATIONS ===== -->
-<section id="certifications">
-  <div class="wrap">
-    <h2>Certifications</h2>
-    <article class="card">
-      <h3>Fullstack Web Development</h3>
-      <p>TAP Academy</p>
-      <p class="meta">2026</p>
-      <p>Covered Core Java, Advanced Java (JDBC, J2EE, Servlets), Spring, Hibernate, MySQL and frontend development, with hands-on OOP, Collections, Multithreading, Exception Handling and Java 8 features (Lambda Expressions, Stream API). Applied these skills in several projects, including a capstone Online E-Commerce application.</p>
-    </article>
-  </div>
-</section>
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+      <h2 class="reveal">Contact me</h2>
+      <div class="contact reveal">
+        <form id="form" novalidate>
+          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name"
+              required><span class="error" id="name-error" role="alert"></span></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email"
+              autocomplete="email" required><span class="error" id="email-error" role="alert"></span></div>
+          <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" type="text"
+              required><span class="error" id="subject-error" role="alert"></span></div>
+          <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="5"
+              required></textarea><span class="error" id="message-error" role="alert"></span></div>
+          <button class="btn primary" type="submit">Send message</button>
+          <p id="status" class="status" role="status"></p>
+          <p class="note">This form opens your email app with the message filled in. To receive messages directly,
+            connect a backend or a free form service such as Formspree or Netlify Forms.</p>
+        </form>
+      </div>
+    </section>
+  </main>
 
-<!-- ===== CONTACT ===== -->
-<section id="contact">
-  <div class="wrap">
-    <h2>Contact me</h2>
-    <p class="lead">Open to software developer and entry-level IT roles. Send a message and I will reply.</p>
-    <div class="contact">
-      <ul class="info">
-        <li><i class="fa-solid fa-envelope"></i><a href="mailto:subanithi46@gmail.com">subanithi46@gmail.com</a></li>
-        <li><i class="fa-solid fa-phone"></i><a href="tel:+918098238827">8098238827</a></li>
-        <li><i class="fa-brands fa-linkedin-in"></i><a href="https://www.linkedin.com/in/subanithi46" target="_blank" rel="noopener">linkedin.com/in/subanithi46</a></li>
-        <li><i class="fa-brands fa-github"></i><a href="https://github.com/SubanithiM" target="_blank" rel="noopener">github.com/SubanithiM</a></li>
-        <li><i class="fa-solid fa-location-dot"></i>Perambalur, Tamil Nadu</li>
-      </ul>
-      <form id="form" class="card" novalidate>
-        <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required><div class="err" id="name-err"></div></div>
-        <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required><div class="err" id="email-err"></div></div>
-        <div><label for="subject">Subject</label><input id="subject" name="subject" required><div class="err" id="subject-err"></div></div>
-        <div><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea><div class="err" id="message-err"></div></div>
-        <button class="btn primary" type="submit">Send message</button>
-        <p id="status" role="status" aria-live="polite"></p>
-        <p class="note">A static website cannot send email by itself. Until a form service (such as Formspree) or a backend is connected in script.js, this form opens your email app with the message filled in.</p>
-      </form>
-    </div>
-  </div>
-</section>
+  <footer>
+    <p>&copy; <span id="year"></span> Subanithi M. All rights reserved.</p>
+  </footer>
 
-</main>
-
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="wrap foot">
-    <p>© <span id="year">2026</span> Subanithi M. All rights reserved.</p>
-    <a href="mailto:subanithi46@gmail.com">subanithi46@gmail.com</a>
-  </div>
-</footer>
-
-<button id="top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-<script src="script.js"></script>
+  <button id="top" class="top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script src="script.js"></script>
 </body>
+
 </html>
