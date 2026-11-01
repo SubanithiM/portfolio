@@ -1,84 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Subanithi M | Java Full Stack Developer Portfolio</title>
-  <meta name="description"
-    content="Portfolio of Subanithi M, an Electronics and Communication Engineering student and Java full stack developer skilled in Spring Boot, JSP, Servlets, MySQL and Python.">
+  <meta name="theme-color" content="#2e2622">
+  <meta property="og:title" content="Subanithi M | Java Full Stack Developer">
+  <meta name="description" content="Portfolio of Subanithi M, an Electronics and Communication Engineering student and Java full stack developer skilled in Spring Boot, JSP, Servlets, MySQL and Python.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <!-- Intro splash: pure CSS, hides itself after about 2.6 seconds (script.js then removes it) -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="panel top"></div><div class="panel bottom"></div>
+    <div class="intro-inner"><div class="intro-name"><span style="--i:0">S</span><span style="--i:1">U</span><span style="--i:2">B</span><span style="--i:3">A</span><span style="--i:4">N</span><span style="--i:5">I</span><span style="--i:6">T</span><span style="--i:7">H</span><span style="--i:8">I</span><span style="--i:9">&nbsp;</span><span style="--i:10">M</span></div>
+      <p class="intro-role">Java Full Stack Developer</p><div class="intro-bar"><i></i></div></div>
+  </div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
   <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Animated gradient background (WebGL2, see script.js) -->
+  <canvas id="gl" aria-hidden="true"></canvas>
 
   <!-- Smoke cursor trail is drawn on this canvas (see script.js) -->
   <canvas id="smoke" aria-hidden="true"></canvas>
 
   <!-- ===== NAVIGATION ===== -->
+  <!-- Floating liquid-glass navbar (script.js adds the water effect; the links work without it) -->
   <header class="nav" id="nav">
-    <a href="#home" class="logo" aria-label="Subanithi M, back to top">Subanithi M</a>
-    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="links"><i
-        class="fa-solid fa-bars"></i></button>
-    <nav aria-label="Main navigation">
-      <ul id="links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certificate</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <nav class="nimbus-nav" id="nimbus" data-tone="dark" data-gl="on" data-refract="off" aria-label="Main navigation">
+      <a class="nimbus-item" href="#home" data-fx="glow" aria-label="Home" aria-current="page"><span class="nv-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 11.2 12 4l8.5 7.2"/><path d="M6 9.6V20h12V9.6"/><path class="nv-door" d="M10 20v-5h4v5Z"/></svg></span><span class="nimbus-label">Home</span></a>
+      <a class="nimbus-item" href="#about" data-fx="wave" aria-label="About"><span class="nv-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.8 20c1.2-3.4 4-5 7.2-5s6 1.6 7.2 5"/></svg></span><span class="nimbus-label">About</span></a>
+      <a class="nimbus-item" href="#education" data-fx="spin" aria-label="Education"><span class="nv-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.5 12 5l9.5 4.5L12 14Z"/><path d="M6.5 11.8V16c0 1.4 2.4 3 5.5 3s5.5-1.6 5.5-3v-4.2"/></svg></span><span class="nimbus-label">Education</span></a>
+      <a class="nimbus-item" href="#skills" data-fx="pop" aria-label="Skills"><span class="nv-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span><span class="nimbus-label">Skills</span></a>
+      <a class="nimbus-item" href="#experience" data-fx="pop" aria-label="Experience"><span class="nv-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 13h18"/></svg></span><span class="nimbus-label">Experience</span></a>
+      <a class="nimbus-item" href="#projects" data-fx="spin" aria-label="Projects"><span class="nv-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.8"/><rect x="13" y="4" width="7" height="7" rx="1.8"/><rect x="4" y="13" width="7" height="7" rx="1.8"/><rect x="13" y="13" width="7" height="7" rx="1.8"/></svg></span><span class="nimbus-label">Projects</span></a>
+      <a class="nimbus-item" href="#certifications" data-fx="drop" aria-label="Certificate"><span class="nv-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="m8.7 13.6-1.2 7.4 4.5-2.6 4.5 2.6-1.2-7.4"/></svg></span><span class="nimbus-label">Certificate</span></a>
+      <a class="nimbus-item" href="#contact" data-fx="plane" aria-label="Contact"><span class="nv-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7.5 8 5.5 8-5.5"/></svg></span><span class="nimbus-label">Contact</span></a>
     </nav>
   </header>
 
   <main id="main">
     <!-- ===== HERO ===== -->
     <section id="home" class="hero">
-      <p class="hello">Hi, I am</p>
+      <p class="hello">Hi, I am <span class="pill"><i></i>Open to opportunities</span></p>
       <h1>Subanithi M</h1>
       <p class="role">Software Developer · Java Full Stack</p>
-      <p class="lead">I build web applications with Java, Spring Boot, JSP, Servlets and MySQL. I am an Electronics and
-        Communication Engineering student with internship experience, and I enjoy solving problems with clear logic.</p>
+      <p class="lead">I build web applications with Java, Spring Boot, JSP, Servlets and MySQL. I am an Electronics and Communication Engineering student with internship experience, and I enjoy solving problems with clear logic.</p>
       <div class="actions">
         <a class="btn primary" href="#projects">View My Work</a>
         <a class="btn ghost" href="#contact">Contact Me</a>
+        <a class="btn ghost" href="Subanithi_M_Resume.pdf" target="_blank" rel="noopener noreferrer" data-resume="view"><i class="fa-solid fa-file-lines"></i> View Resume</a>
+        <a class="btn ghost" href="Subanithi_M_Resume.pdf" download="Subanithi_M_Resume.pdf" data-resume="download"><i class="fa-solid fa-download"></i> Download Resume</a>
       </div>
-      <!-- Replace each href="#" with your real URL and remove the "placeholder" class -->
+      <!-- Social links -->
       <div class="social">
-        <a href="#" class="placeholder" title="[Add GitHub URL]" aria-label="GitHub (add your URL)"><i
-            class="fa-brands fa-github"></i></a>
-        <a href="#" class="placeholder" title="[Add LinkedIn URL]" aria-label="LinkedIn (add your URL)"><i
-            class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/SubanithiM" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/subanithi46" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin-in"></i></a>
         <a href="mailto:subanithi46@gmail.com" aria-label="Email Subanithi"><i class="fa-solid fa-envelope"></i></a>
       </div>
     </section>
+
+    <!-- ===== TECH MARQUEE (skills from the resume; script.js doubles the list for a seamless loop) ===== -->
+    <div class="marquee" aria-label="Technologies I work with"><ul class="track"><li>Java</li><li>Spring Boot</li><li>JSP</li><li>Servlets</li><li>JDBC</li><li>Hibernate</li><li>MySQL</li><li>REST APIs</li><li>React</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>Python</li><li>Docker</li><li>Git</li><li>Maven</li></ul></div>
 
     <!-- ===== ABOUT ===== -->
     <section id="about">
       <h2 class="reveal">About me</h2>
       <div class="about reveal">
-        <!-- Profile photo: replace profile.jpg in this folder to change it -->
-        <img src="profile.jpg" alt="Subanithi M wearing headphones and a black blazer, seated at a laptop" width="1200"
-          height="675" loading="lazy">
+        <!-- Intro video replaces profile photo -->
+        <div class="about-media">
+          <video id="about-video" src="intro.mp4" loop playsinline muted preload="metadata" aria-label="Subanithi M intro video"></video>
+          <!-- Smoke canvas local to the video card -->
+          <canvas id="video-smoke" class="video-smoke" aria-hidden="true"></canvas>
+          <!-- Centered overlay play button — inside the card -->
+          <button id="intro-play-btn" class="intro-play-btn" aria-label="Play intro video and voice greeting">
+            <span class="ipb-circle">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="white" aria-hidden="true">
+                <polygon points="6,4 20,12 6,20"/>
+              </svg>
+            </span>
+            <span class="ipb-label">PLAY REEL</span>
+          </button>
+        </div>
         <div>
-          <p>I am a motivated Electronics and Communication Engineering student with a strong foundation in Java, HTML
-            and CSS. I have gained hands-on experience through an internship and technical training in software
-            development and embedded systems.</p>
-          <p>I am good at problem-solving and logical thinking, and I want to contribute to innovative projects and grow
-            with an organization in the IT and engineering domains.</p>
+          <p>I am a motivated Electronics and Communication Engineering student with a strong foundation in Java, HTML and CSS. I have gained hands-on experience through an internship and technical training in software development and embedded systems.</p>
+          <p>I am good at problem-solving and logical thinking, and I want to contribute to innovative projects and grow with an organization in the IT and engineering domains.</p>
           <ul class="facts">
             <li><i class="fa-solid fa-location-dot"></i> Perambalur, Tamil Nadu</li>
-            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:subanithi46@gmail.com">subanithi46@gmail.com</a>
-            </li>
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:subanithi46@gmail.com">subanithi46@gmail.com</a></li>
             <li><i class="fa-solid fa-phone"></i> <a href="tel:+918098238827">8098238827</a></li>
           </ul>
         </div>
@@ -95,9 +109,9 @@
           <p>CGPA: 72.5%</p>
         </article>
         <article class="item reveal">
-          <h3>Higher secondary education</h3>
+          <h3>School education (SSLC and HSLC)</h3>
           <p class="meta">Sree Ambaals Matric Hr.Sec. School, Padalur | 2019 to 2022</p>
-          <p>SLC: 80% | SC: 69.3%</p>
+          <p>SSLC: 80% | HSLC: 69.3%</p>
         </article>
       </div>
     </section>
@@ -106,74 +120,13 @@
     <section id="skills">
       <h2 class="reveal">Technical skills</h2>
       <div class="grid skills">
-        <div class="card reveal">
-          <h3><i class="fa-solid fa-code"></i> Programming languages</h3>
-          <ul class="tags">
-            <li>Java</li>
-            <li>SQL</li>
-            <li>Python</li>
-          </ul>
-        </div>
-        <div class="card reveal">
-          <h3><i class="fa-brands fa-html5"></i> Frontend</h3>
-          <ul class="tags">
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>React</li>
-          </ul>
-        </div>
-        <div class="card reveal">
-          <h3><i class="fa-solid fa-server"></i> Backend</h3>
-          <ul class="tags">
-            <li>Java Servlets</li>
-            <li>JSP</li>
-            <li>JDBC</li>
-            <li>Spring Boot</li>
-            <li>REST APIs</li>
-          </ul>
-        </div>
-        <div class="card reveal">
-          <h3><i class="fa-solid fa-database"></i> Databases</h3>
-          <ul class="tags">
-            <li>MySQL</li>
-            <li>Aiven Cloud MySQL</li>
-          </ul>
-        </div>
-        <div class="card reveal">
-          <h3><i class="fa-solid fa-cubes"></i> Frameworks and libraries</h3>
-          <ul class="tags">
-            <li>Spring</li>
-            <li>Spring Boot</li>
-            <li>Hibernate</li>
-            <li>React</li>
-            <li>Scapy</li>
-          </ul>
-        </div>
-        <div class="card reveal">
-          <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools and platforms</h3>
-          <ul class="tags">
-            <li>Git</li>
-            <li>GitHub</li>
-            <li>Maven</li>
-            <li>Apache Tomcat</li>
-            <li>Docker</li>
-            <li>Render</li>
-            <li>Eclipse</li>
-            <li>VS Code</li>
-            <li>Antigravity</li>
-          </ul>
-        </div>
-        <div class="card reveal wide">
-          <h3><i class="fa-solid fa-brain"></i> Core concepts</h3>
-          <ul class="tags">
-            <li>OOP</li>
-            <li>Exception Handling</li>
-            <li>Multithreading</li>
-            <li>Collections</li>
-            <li>Data Structures and Algorithms</li>
-          </ul>
-        </div>
+        <div class="card reveal"><h3><i class="fa-solid fa-code"></i> Programming languages</h3><ul class="tags"><li>Java</li><li>SQL</li><li>Python</li></ul></div>
+        <div class="card reveal"><h3><i class="fa-brands fa-html5"></i> Frontend</h3><ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React</li></ul></div>
+        <div class="card reveal"><h3><i class="fa-solid fa-server"></i> Backend</h3><ul class="tags"><li>Java Servlets</li><li>JSP</li><li>JDBC</li><li>Spring Boot</li><li>REST APIs</li></ul></div>
+        <div class="card reveal"><h3><i class="fa-solid fa-database"></i> Databases</h3><ul class="tags"><li>MySQL</li><li>Aiven Cloud MySQL</li></ul></div>
+        <div class="card reveal"><h3><i class="fa-solid fa-cubes"></i> Frameworks and libraries</h3><ul class="tags"><li>Spring</li><li>Spring Boot</li><li>Hibernate</li><li>React</li><li>Scapy</li></ul></div>
+        <div class="card reveal"><h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools and platforms</h3><ul class="tags"><li>Git</li><li>GitHub</li><li>Maven</li><li>Apache Tomcat</li><li>Docker</li><li>Render</li><li>Eclipse</li><li>VS Code</li><li>Antigravity</li></ul></div>
+        <div class="card reveal wide"><h3><i class="fa-solid fa-brain"></i> Core concepts</h3><ul class="tags"><li>OOP</li><li>Exception Handling</li><li>Multithreading</li><li>Collections</li><li>Data Structures and Algorithms</li></ul></div>
       </div>
     </section>
 
@@ -201,49 +154,32 @@
         <article class="card project reveal">
           <h3>Zoloto: e-commerce web application</h3>
           <p class="meta">Jul 2026 to Oct 2026</p>
-          <p>A full-stack e-commerce application built with Java, JSP, Servlets, JDBC and MySQL, deployed live with
-            Docker and Render.</p>
+          <p>A full-stack e-commerce application built with Java, JSP, Servlets, JDBC and MySQL, deployed live with Docker and Render.</p>
           <ul class="points">
             <li>User authentication, product browsing, shopping cart and wishlist.</li>
             <li>Address management and complete order workflows.</li>
             <li>Database operations with the DAO pattern and CRUD functionality.</li>
             <li>Cloud database connection; source managed with Git and GitHub.</li>
           </ul>
-          <ul class="tags">
-            <li>Java</li>
-            <li>JSP</li>
-            <li>Servlets</li>
-            <li>JDBC</li>
-            <li>MySQL</li>
-            <li>Docker</li>
-            <li>Render</li>
-          </ul>
+          <ul class="tags"><li>Java</li><li>JSP</li><li>Servlets</li><li>JDBC</li><li>MySQL</li><li>Docker</li><li>Render</li></ul>
           <div class="links">
-            <a class="btn primary small" href="https://zoloto-u5t9.onrender.com" target="_blank"
-              rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>
-            <a class="btn ghost small placeholder" href="#" title="https://github.com/SubanithiM"><i
-                class="fa-brands fa-github"></i> GitHub</a>
+            <a class="btn primary small" href="https://zoloto-u5t9.onrender.com" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a>
+            <a class="btn ghost small" href="https://github.com/SubanithiM" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
           </div>
         </article>
 
         <article class="card project reveal">
           <h3>ARP spoofing detection system with email alert</h3>
           <p class="meta">Python and Scapy</p>
-          <p>A real-time tool that monitors ARP packets and checks IP and MAC address mappings to protect a local
-            network.</p>
+          <p>A real-time tool that monitors ARP packets and checks IP and MAC address mappings to protect a local network.</p>
           <ul class="points">
             <li>Detects suspicious MAC address changes linked to ARP spoofing through continuous packet monitoring.</li>
             <li>Sends alerts in the terminal and by email as soon as an attack is detected.</li>
             <li>A lightweight, low-cost option for LAN security.</li>
           </ul>
-          <ul class="tags">
-            <li>Python</li>
-            <li>Scapy</li>
-            <li>Networking</li>
-          </ul>
+          <ul class="tags"><li>Python</li><li>Scapy</li><li>Networking</li></ul>
           <div class="links">
-            <a class="btn ghost small placeholder" href="#" title="https://github.com/SubanithiM"><i class="fa-brands fa-github"></i>
-              GitHub</a>
+            <a class="btn ghost small" href="https://github.com/SubanithiM" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
           </div>
         </article>
       </div>
@@ -254,42 +190,45 @@
       <h2 class="reveal">Certificate</h2>
       <article class="card reveal">
         <h3><i class="fa-solid fa-certificate"></i> Full Stack Web Development, TAP Academy</h3>
-        <p class="meta">2024</p>
-        <p>Covered Core Java, Advanced Java (JDBC, J2EE, Servlets), Spring, Hibernate, MySQL and frontend development,
-          including OOP, Collections, Multithreading, Exception Handling and Java 8 features (Lambda Expressions, Stream
-          API). Applied these skills in several projects, including a capstone online food delivery application from
-          database integration to responsive UI.</p>
+        <p class="meta">2026</p>
+        <p>Covered Core Java, Advanced Java (JDBC, J2EE, Servlets), Spring, Hibernate, MySQL and frontend development, including OOP, Collections, Multithreading, Exception Handling and Java 8 features (Lambda Expressions, Stream API). Applied these skills in several projects, including a capstone online E-Commerce Web application from database integration to responsive UI.</p>
       </article>
     </section>
 
     <!-- ===== CONTACT ===== -->
     <section id="contact">
-      <h2 class="reveal">Contact me</h2>
-      <div class="contact reveal">
+      <h2 class="reveal">Let’s work together</h2>
+      <p class="contact-lead reveal">I am looking for opportunities in software development. Send me a message, or reach me directly using the details here.</p>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <a class="info-card" href="mailto:subanithi46@gmail.com"><i class="fa-solid fa-envelope"></i><span><small>Email</small>subanithi46@gmail.com</span></a>
+          <a class="info-card" href="tel:+918098238827"><i class="fa-solid fa-phone"></i><span><small>Phone</small>8098238827</span></a>
+          <a class="info-card" href="https://www.google.com/maps/search/?api=1&amp;query=Perambalur%2C+Tamil+Nadu" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i><span><small>Location</small>Perambalur, Tamil Nadu</span></a>
+          <a class="info-card" href="https://github.com/SubanithiM" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i><span><small>GitHub</small>github.com/SubanithiM</span></a>
+          <a class="info-card" href="https://www.linkedin.com/in/subanithi46" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i><span><small>LinkedIn</small>linkedin.com/in/subanithi46</span></a>
+          <a class="btn primary" href="Subanithi_M_Resume.pdf" download="Subanithi_M_Resume.pdf" data-resume="download"><i class="fa-solid fa-download"></i> Download Resume</a>
+        </div>
+        <div class="contact reveal">
         <form id="form" novalidate>
-          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name"
-              required><span class="error" id="name-error" role="alert"></span></div>
-          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email"
-              autocomplete="email" required><span class="error" id="email-error" role="alert"></span></div>
-          <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" type="text"
-              required><span class="error" id="subject-error" role="alert"></span></div>
-          <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="5"
-              required></textarea><span class="error" id="message-error" role="alert"></span></div>
+          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required><span class="error" id="name-error" role="alert"></span></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required><span class="error" id="email-error" role="alert"></span></div>
+          <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" type="text" required><span class="error" id="subject-error" role="alert"></span></div>
+          <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea><span class="error" id="message-error" role="alert"></span></div>
           <button class="btn primary" type="submit">Send message</button>
           <p id="status" class="status" role="status"></p>
-          <p class="note">This form opens your email app with the message filled in. To receive messages directly,
-            connect a backend or a free form service such as Formspree or Netlify Forms.</p>
+          <p class="note">This form opens your email app with the message filled in. To receive messages directly, connect a backend or a free form service such as Formspree or Netlify Forms.</p>
         </form>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
+    <div class="social foot"><a href="https://github.com/SubanithiM" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a><a href="https://www.linkedin.com/in/subanithi46" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="mailto:subanithi46@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></div>
     <p>&copy; <span id="year"></span> Subanithi M. All rights reserved.</p>
   </footer>
 
   <button id="top" class="top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
   <script src="script.js"></script>
 </body>
-
 </html>
