@@ -72,19 +72,11 @@
     <section id="about">
       <h2 class="reveal">About me</h2>
       <div class="about reveal">
-        <!-- Intro video replaces profile photo -->
-        <div class="about-media">
-          <video id="about-video" src="intro.mp4" loop playsinline muted preload="metadata" aria-label="Subanithi M intro video"></video>
-          <!-- Smoke canvas local to the video card -->
-          <canvas id="video-smoke" class="video-smoke" aria-hidden="true"></canvas>
-          <!-- Centered overlay play button — inside the card -->
-          <button id="intro-play-btn" class="intro-play-btn" aria-label="Play intro video and voice greeting">
-            <span class="ipb-circle">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="white" aria-hidden="true">
-                <polygon points="6,4 20,12 6,20"/>
-              </svg>
-            </span>
-            <span class="ipb-label">PLAY REEL</span>
+        <!-- Photo card: the animated video (with its own voice) plays here; the round button plays and pauses it -->
+        <div class="photo-card">
+          <video id="reelVideo" src="about-reel.mp4" poster="about-poster.jpg" playsinline preload="metadata" aria-label="Animated introduction of Subanithi M"></video>
+          <button type="button" class="reel-btn" id="reelBtn" aria-pressed="false" aria-label="Play intro video with sound">
+            <span class="reel-circle"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path class="p-play" d="M8 5v14l11-7z"/><path class="p-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></span><span class="reel-label">Play reel</span>
           </button>
         </div>
         <div>
@@ -190,8 +182,8 @@
       <h2 class="reveal">Certificate</h2>
       <article class="card reveal">
         <h3><i class="fa-solid fa-certificate"></i> Full Stack Web Development, TAP Academy</h3>
-        <p class="meta">2026</p>
-        <p>Covered Core Java, Advanced Java (JDBC, J2EE, Servlets), Spring, Hibernate, MySQL and frontend development, including OOP, Collections, Multithreading, Exception Handling and Java 8 features (Lambda Expressions, Stream API). Applied these skills in several projects, including a capstone online E-Commerce Web application from database integration to responsive UI.</p>
+        <p class="meta">2024</p>
+        <p>Covered Core Java, Advanced Java (JDBC, J2EE, Servlets), Spring, Hibernate, MySQL and frontend development, including OOP, Collections, Multithreading, Exception Handling and Java 8 features (Lambda Expressions, Stream API). Applied these skills in several projects, including a capstone online food delivery application from database integration to responsive UI.</p>
       </article>
     </section>
 

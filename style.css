@@ -66,91 +66,12 @@ h1 { font-family: var(--head); font-weight: 800; font-size: clamp(3rem, 12vw, 8.
 /* ===== ABOUT ===== */
 .about { display: grid; grid-template-columns: 260px 1fr; gap: 40px; align-items: start; }
 .photo { aspect-ratio: 4 / 5; border: 1px dashed var(--fg); border-radius: 20px; display: grid; place-items: center; text-align: center; color: var(--muted); padding: 16px; overflow: hidden; }
+/* Colour photo. It is landscape, so object-position centres the crop on the face. */
+.about img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 47% center; border-radius: 20px; border: 1px solid var(--line); }
 .about p { color: var(--muted); }
 .facts { margin-top: 24px; display: grid; gap: 10px; }
 .facts i { width: 22px; }
 .facts a:hover { text-decoration: underline; }
-
-/* ===== ABOUT MEDIA (video replaces profile photo) ===== */
-.about-media {
-  position: relative;
-  width: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: transparent;   /* was #000 — caused black bleed-through on hover scale */
-  cursor: default;
-}
-.about-media video {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  /* No scale transform — was causing image to appear black on hover */
-}
-
-/* Local smoke canvas — sits on top of video, below the button */
-.video-smoke {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* ===== PLAY REEL button — bottom-right corner of the video ===== */
-.intro-play-btn {
-  position: absolute;
-  bottom: 14px;
-  right: 14px;
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 2;
-  transition: opacity .35s, transform .25s;
-}
-/* Hide button once playing */
-.intro-play-btn.playing { opacity: 0; pointer-events: none; }
-
-/* Frosted circle */
-.ipb-circle {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(15, 15, 15, .60);
-  backdrop-filter: blur(12px) saturate(1.5);
-  -webkit-backdrop-filter: blur(12px) saturate(1.5);
-  border: 1.5px solid rgba(255,255,255,.40);
-  display: grid;
-  place-items: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,.55), inset 0 1px 1px rgba(255,255,255,.28);
-  transition: transform .25s cubic-bezier(.3,1.6,.5,1), background .25s, box-shadow .25s;
-}
-.intro-play-btn:hover .ipb-circle {
-  transform: scale(1.15);
-  background: rgba(255,255,255,.20);
-  box-shadow: 0 6px 28px rgba(0,0,0,.65), inset 0 1px 1px rgba(255,255,255,.45);
-}
-.ipb-circle svg { margin-left: 3px; filter: drop-shadow(0 1px 4px rgba(0,0,0,.6)); }
-
-/* "PLAY REEL" label */
-.ipb-label {
-  color: #fff;
-  font-family: var(--head);
-  font-weight: 600;
-  font-size: .62rem;
-  letter-spacing: .16em;
-  text-shadow: 0 1px 8px rgba(0,0,0,.85);
-  white-space: nowrap;
-}
 
 /* ===== CARDS AND GRIDS ===== */
 .grid { display: grid; gap: 20px; }
@@ -207,7 +128,7 @@ footer { text-align: center; padding: 36px 5%; border-top: 1px solid var(--line)
   #links.open { display: flex; }
   #links a { display: block; padding: 12px 8px; border-radius: 8px; }
   .about { grid-template-columns: 1fr; }
-  .about-media { max-width: 240px; margin: 0 auto; }
+  .photo, .about img { max-width: 240px; }
   section { padding: 72px 6%; }
 }
 @media (max-width: 400px) { .projects { grid-template-columns: 1fr; } }
@@ -337,3 +258,44 @@ h1, h2 { text-shadow: 0 2px 22px rgba(0, 0, 0, .45); }
 @media (max-width: 1020px) { .nimbus-item { padding: 0 13px; } .nimbus-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } }
 @media (max-width: 420px) { .nimbus-item { padding: 0 9px; } }
 @media (prefers-reduced-motion: reduce) { .nv-ico svg, .nv-ico::before, .nv-ico::after, .nv-door { animation: none !important; transition: none; } }
+
+/* ===== FULL-WIDTH NAVBAR: the pill spans the screen and the water drop travels farther ===== */
+.nav { padding: 14px 16px; }
+.nimbus-nav { width: 100%; max-width: none; }
+.nimbus-item { flex: 1 1 0; justify-content: center; min-width: 0; }
+
+/* ===== ABOUT: photo with intro player ===== */
+.intro-col { width: 100%; max-width: 260px; }
+.about img { max-width: 100%; }
+.photo-wrap { position: relative; border-radius: 20px; }
+.photo-wrap video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 47% center; border-radius: 20px; opacity: 0; transition: opacity .4s; }
+.photo-wrap.show-video video { opacity: 1; }
+.photo-wrap.playing { box-shadow: 0 0 0 2px rgba(255,255,255,.55), 0 0 44px rgba(255,255,255,.2); animation: voiceGlow 1.6s ease-in-out infinite; }
+@keyframes voiceGlow { 50% { box-shadow: 0 0 0 5px rgba(255,255,255,.25), 0 0 60px rgba(255,255,255,.3); } }
+.player { margin-top: 14px; }
+.play-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 44px; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--fg); background: var(--fg); color: var(--bg); font: 500 .95rem var(--body); cursor: pointer; transition: transform .2s, background .2s, color .2s; }
+.play-btn:hover { transform: translateY(-2px); background: transparent; color: var(--fg); }
+.bar { height: 3px; margin: 12px 4px 0; border-radius: 3px; background: rgba(255,255,255,.22); overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: #fff; transition: width .4s ease; }
+.cap { min-height: 3.4em; margin-top: 10px; font-size: .88rem; line-height: 1.5; }
+.transcript { margin-top: 6px; font-size: .85rem; color: var(--muted); }
+.transcript summary { cursor: pointer; }
+.transcript p { margin-top: 8px; }
+
+/* ===== ABOUT: photo card with the animated video and round play button ===== */
+#smoke { z-index: 50; }   /* cursor smoke drifts over the video too */
+.photo-card { position: relative; width: 100%; max-width: 260px; aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); background: #c41a0a; }
+.photo-card video { width: 100%; height: 100%; object-fit: cover; object-position: 47% center; display: block; cursor: pointer; }
+.photo-card::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, rgba(14,9,7,.5), rgba(14,9,7,0) 34%); }
+.photo-card.playing { box-shadow: 0 0 0 2px rgba(255,255,255,.55), 0 0 44px rgba(255,255,255,.2); }
+.reel-btn { position: absolute; right: 14px; bottom: 12px; z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 7px; padding: 0; border: 0; background: none; color: #fff; cursor: pointer; }
+.reel-circle { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 50%; background: rgba(20,12,10,.62); border: 1px solid rgba(255,255,255,.4); backdrop-filter: blur(6px); transition: transform .25s, background .25s, box-shadow .25s; }
+.reel-btn:hover .reel-circle { transform: scale(1.07); background: rgba(255,255,255,.22); box-shadow: 0 0 0 7px rgba(255,255,255,.1); }
+.reel-btn:focus-visible { outline: 2px solid #fff; outline-offset: 5px; border-radius: 12px; }
+.reel-label { font-size: .6rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; text-shadow: 0 1px 8px rgba(0,0,0,.6); }
+.photo-card:not(.playing) .reel-circle { animation: reelPulse 2.2s ease-out infinite; }
+@keyframes reelPulse { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,.5); } 100% { box-shadow: 0 0 0 14px rgba(255,255,255,0); } }
+.reel-btn[hidden] { display: none; }
+.reel-btn .p-pause { display: none; }
+.reel-btn.is-playing .p-pause { display: block; }
+.reel-btn.is-playing .p-play { display: none; }
